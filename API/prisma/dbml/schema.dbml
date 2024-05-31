@@ -1,0 +1,177 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table User {
+  userId String [pk]
+  firstname String [not null]
+  lastname String [not null]
+  email String [unique, not null]
+  password String [not null]
+  country String [not null]
+  city String [not null]
+  postalCode String [not null]
+  street String [not null]
+  addressNumber String [not null]
+  phoneNumber String
+  telNumber String
+  companyId String
+  role Role [not null, default: 'customer']
+  Company Company
+}
+
+Table Company {
+  companyId String [pk]
+  name String [not null]
+  logo String [not null]
+  Notification Notification [not null]
+  Order Order [not null]
+  User User [not null]
+}
+
+Table Notification {
+  notificationId String [pk]
+  title String [not null]
+  companyId String [not null]
+  shortMessage String [not null]
+  longMessage String [not null]
+  createdAt DateTime [default: `now()`, not null]
+  seen Boolean [not null, default: false]
+  Company Company [not null]
+}
+
+Table TransportService {
+  transportServiceId String [pk]
+  name String [unique, not null]
+  phoneNumber String [not null]
+  email String [not null]
+  activeForDelivery Boolean [not null, default: true]
+  order Order [not null]
+  Track_Trace Track_Trace [not null]
+}
+
+Table Order {
+  orderId String [pk]
+  orderCountry String [not null]
+  orderCity String [not null]
+  orderPostalCode String [not null]
+  orderStreet String [not null]
+  orderAddressNumber String [not null]
+  orderDate DateTime [default: `now()`, not null]
+  status String [not null, default: 'Placed']
+  transportId String
+  companyId String [not null]
+  packagingId String [not null]
+  trackTraceId String [unique]
+  Company Company [not null]
+  Packaging Packaging [not null]
+  Track_Trace Track_Trace
+  transportService TransportService
+  products Order_Item [not null]
+}
+
+Table Packaging {
+  packageId String [pk]
+  name String [not null]
+  price Float [not null]
+  width Float [not null]
+  height Float [not null]
+  length Float [not null]
+  activeForDelivery Boolean [not null, default: true]
+  type PackagingType [not null, default: 'standard']
+  Order Order [not null]
+}
+
+Table Track_Trace {
+  trackTraceId String [pk]
+  transportServiceId String [not null]
+  trackLenght Int [not null]
+  trackOnlyNumbers Boolean [not null]
+  trackPrefix String [not null]
+  verificationCode VerificationCodes [not null]
+  trackSequence String [not null]
+  order Order
+  transportService TransportService [not null]
+}
+
+Table Order_Item {
+  quantity Int [not null]
+  price Float [not null]
+  orderId String [not null]
+  productId String [not null]
+  Order Order [not null]
+  Product Product [not null]
+
+  indexes {
+    (orderId, productId) [pk]
+  }
+}
+
+Table Product {
+  productId String [pk]
+  name String [not null]
+  pictureImg String
+  amountInStock String [not null]
+  deliveryTime String
+  fromCompany String [not null]
+  categoryId String
+  productListerDescription String
+  productLongDescription String
+  productShortDescription String
+  orders Order_Item [not null]
+  prices Price [not null]
+  Category Category
+}
+
+Table Price {
+  priceId String [pk]
+  currencyId String [not null]
+  price Float [not null]
+  validFrom DateTime [not null]
+  productId String [not null]
+  Product Product [not null]
+}
+
+Table Category {
+  categoryId String [pk]
+  categoryName String [not null]
+  products Product [not null]
+}
+
+Enum PackagingType {
+  standard
+  custom
+}
+
+Enum Role {
+  admin
+  employee
+  customer
+}
+
+Enum VerificationCodes {
+  postcode
+  orderid
+}
+
+Ref: User.companyId > Company.companyId
+
+Ref: Notification.companyId > Company.companyId
+
+Ref: Order.companyId > Company.companyId
+
+Ref: Order.packagingId > Packaging.packageId
+
+Ref: Order.trackTraceId - Track_Trace.trackTraceId
+
+Ref: Order.transportId > TransportService.transportServiceId
+
+Ref: Track_Trace.transportServiceId > TransportService.transportServiceId
+
+Ref: Order_Item.orderId > Order.orderId
+
+Ref: Order_Item.productId > Product.productId
+
+Ref: Product.categoryId > Category.categoryId
+
+Ref: Price.productId > Product.productId

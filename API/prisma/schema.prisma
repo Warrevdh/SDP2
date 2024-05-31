@@ -1,0 +1,180 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  userId        String   @id @default(uuid())
+  firstname     String   @db.VarChar(255)
+  lastname      String   @db.VarChar(255)
+  email         String   @unique @db.VarChar(255)
+  password      String   @db.VarChar(255)
+  country       String   @db.VarChar(255)
+  city          String   @db.VarChar(255)
+  postalCode    String   @db.VarChar(255)
+  street        String   @db.VarChar(255)
+  addressNumber String   @db.VarChar(255)
+  phoneNumber   String?  @db.VarChar(255)
+  telNumber     String?  @db.VarChar(255)
+  companyId     String?
+  role          Role     @default(customer)
+  Company       Company? @relation(fields: [companyId], references: [companyId])
+
+  @@index([companyId], map: "User_companyId_fkey")
+}
+
+model Company {
+  companyId    String         @id @default(uuid())
+  name         String         @unique @db.VarChar(255)
+  logo         String         @db.VarChar(255)
+  Notification Notification[]
+  Order        Order[]
+  User         User[]
+  Product      Product[]
+
+  @@index([name], map: "name")
+}
+
+model Notification {
+  notificationId String   @id @default(uuid())
+  title          String   @db.VarChar(255)
+  companyId      String   @db.VarChar(255)
+  shortMessage   String   @db.VarChar(255)
+  longMessage    String   @db.VarChar(255)
+  createdAt      DateTime @default(now())
+  seen           Boolean  @default(false)
+  Company        Company  @relation(fields: [companyId], references: [companyId])
+
+  @@index([companyId], map: "Notification_userId_fkey")
+}
+
+model TransportService {
+  transportServiceId String        @id @default(uuid())
+  name               String        @unique @db.VarChar(255)
+  phoneNumber        String        @db.VarChar(255)
+  email              String        @db.VarChar(255)
+  activeForDelivery  Boolean       @default(true)
+  trackLenght        Int
+  trackOnlyNumbers   Boolean
+  trackPrefix        String        @db.VarChar(255)
+  order              Order[]
+  Track_Trace        Track_Trace[]
+}
+
+model Order {
+  orderId            String            @id @default(uuid())
+  orderCountry       String            @db.VarChar(255)
+  orderCity          String            @db.VarChar(255)
+  orderPostalCode    String            @db.VarChar(255)
+  orderStreet        String            @db.VarChar(255)
+  orderAddressNumber String            @db.VarChar(255)
+  orderDate          DateTime          @default(now())
+  status             String            @default("Placed") @db.VarChar(255)
+  transportId        String?           @db.VarChar(255)
+  companyId          String            @db.VarChar(255)
+  packagingId        String            @db.VarChar(255)
+  trackTraceCode       String?           @unique
+  Company            Company           @relation(fields: [companyId], references: [companyId])
+  Packaging          Packaging         @relation(fields: [packagingId], references: [packageId])
+  Track_Trace        Track_Trace?      @relation(fields: [trackTraceCode], references: [trackTraceCode])
+  transportService   TransportService? @relation(fields: [transportId], references: [transportServiceId])
+  products           Order_Item[]
+
+  @@index([companyId], map: "Order_companyCompanyId_fkey")
+  @@index([packagingId], map: "Order_packagingId_fkey")
+  @@index([transportId], map: "Order_transportName_fkey")
+}
+
+model Packaging {
+  packageId         String        @id @default(uuid())
+  name              String        @db.VarChar(255)
+  price             Float
+  width             Float
+  height            Float
+  length            Float
+  activeForDelivery Boolean       @default(true)
+  type              PackagingType @default(standard)
+  Order             Order[]
+}
+
+model Track_Trace {
+  trackTraceId       String            @id @default(uuid())
+  trackTraceCode     String            @unique @db.VarChar(255)
+  transportServiceId String            @db.VarChar(255)
+  verificationCode   VerificationCodes
+  order              Order?
+  transportService   TransportService  @relation(fields: [transportServiceId], references: [transportServiceId])
+
+  @@index([transportServiceId], map: "Track_Trace_transportServiceName_fkey")
+}
+
+model Order_Item {
+  quantity  Int
+  price     Float
+  orderId   String  @map("order_Item_orderId") @db.VarChar(255)
+  productId String  @map("order_Item_productId") @db.VarChar(255)
+  Order     Order   @relation(fields: [orderId], references: [orderId])
+  Product   Product @relation(fields: [productId], references: [productId])
+
+  @@id([orderId, productId])
+  @@index([productId], map: "Order_Item_productId_fkey")
+  @@index([orderId], map: "Order_Item_orderId_fkey")
+}
+
+model Product {
+  productId                String       @id @unique @default(uuid())
+  name                     String       @db.VarChar(255)
+  pictureImg               String?      @db.VarChar(255)
+  amountInStock            String       @db.VarChar(255)
+  deliveryTime             String?      @db.VarChar(255)
+  fromCompany              String       @db.VarChar(255)
+  categoryId               String?      @db.VarChar(255)
+  productListerDescription String?      @db.VarChar(255)
+  productLongDescription   String?      @db.VarChar(255)
+  productShortDescription  String?      @db.VarChar(255)
+  orders                   Order_Item[]
+  prices                   Price[]
+  Category                 Category?    @relation(fields: [categoryId], references: [categoryId])
+  Company                  Company?     @relation(fields: [fromCompany], references: [name])
+
+  @@index([categoryId], map: "Product_categoryId_fkey")
+}
+
+model Price {
+  priceId    String   @id @default(uuid())
+  currencyId String   @db.VarChar(255)
+  price      Float
+  validFrom  DateTime
+  productId  String
+  Product    Product  @relation(fields: [productId], references: [productId])
+
+  @@index([productId], map: "Price_productId_fkey")
+}
+
+model Category {
+  categoryId   String    @id @default(uuid())
+  categoryName String    @db.VarChar(255)
+  products     Product[]
+
+  @@index([categoryName], map: "categoryName")
+}
+
+enum PackagingType {
+  standard
+  custom
+}
+
+enum Role {
+  admin
+  employee
+  customer
+}
+
+enum VerificationCodes {
+  postcode
+  orderid
+}
