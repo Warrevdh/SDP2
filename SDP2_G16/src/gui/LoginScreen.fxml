@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<fx:root prefHeight="480.0" prefWidth="658.0" type="GridPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.20001220703125" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="449.39995727539065" minWidth="10.0" prefWidth="425.0000244140625" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="121.79997558593755" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="186.4" minHeight="10.0" prefHeight="158.4" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="151.79998626708985" minHeight="10.0" prefHeight="60.600006103515625" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="151.79998626708985" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.99997558593748" minHeight="10.0" prefHeight="60.800012207031216" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="150.99997558593748" minHeight="0.0" prefHeight="43.40003662109376" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="131.4" minHeight="10.0" prefHeight="48.79997558593749" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="75.19999999999999" minHeight="10.0" prefHeight="63.19999999999999" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TextField fx:id="email" maxWidth="431.0" prefHeight="40.0" prefWidth="431.0" promptText="Email" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <PasswordField fx:id="password" maxWidth="473.0" prefHeight="40.0" prefWidth="473.0" promptText="Password" styleClass="password-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="signInButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signIn" prefHeight="26.0" prefWidth="248.0" styleClass="login" stylesheets="@styles.css" text="Sign In" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="logo" stylesheets="@styles.css">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="144.0" layoutX="30.0" layoutY="9.0" styleClass="logo">
+               <image>
+                  <Image url="@../images/Delaware-logo.svg.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="login_email_error" alignment="TOP_LEFT" prefHeight="39.0" prefWidth="401.0" styleClass="login-error" stylesheets="@styles.css" text="Invalid input" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="login_ww_error" prefHeight="60.0" prefWidth="398.0" styleClass="login-error" stylesheets="@styles.css" text="Invalid Input" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label fx:id="errorLabel" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="490.0" styleClass="login-error-button" stylesheets="@styles.css" text="Invalid input" textAlignment="CENTER" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+   </children>
+</fx:root>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="743.0" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="680.0" prefWidth="837.0" styleClass="userDetails" stylesheets="@styles.css">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="623.0" styleClass="hbox" stylesheets="@styles.css">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="255.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Name" />
+                              <TextField fx:id="carrierNameField" prefHeight="25.0" prefWidth="241.0" styleClass="text-field" stylesheets="@styles.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="240.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Email" />
+                              <TextField fx:id="contactPersonField" prefHeight="25.0" prefWidth="287.0" styleClass="text-field" stylesheets="@styles.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="255.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Phone number" />
+                              <TextField fx:id="phoneNumberField" prefHeight="25.0" prefWidth="241.0" styleClass="text-field" stylesheets="@styles.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="623.0" styleClass="hbox" stylesheets="@styles.css">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="255.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Track length" />
+                              <TextField fx:id="trackLengthField" prefHeight="25.0" prefWidth="241.0" styleClass="text-field" stylesheets="@styles.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="255.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Track only numbers" />
+                              <ChoiceBox fx:id="trackOnlyNumbersBox" prefHeight="26.0" prefWidth="174.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="255.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Track prefix" />
+                              <TextField fx:id="trackPrefixField" prefHeight="25.0" prefWidth="241.0" styleClass="text-field" stylesheets="@styles.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="623.0" styleClass="hbox" stylesheets="@styles.css">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="240.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="167.0" text="Active" />
+                              <ChoiceBox fx:id="activeForDeliveryBox" prefHeight="26.0" prefWidth="174.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css" />
+                  <VBox prefHeight="100.0" prefWidth="198.0" styleClass="vbox" stylesheets="@styles.css" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="623.0" styleClass="hbox" stylesheets="@styles.css">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="419.0" styleClass="vbox" stylesheets="@styles.css">
+                     <children>
+                        <HBox fx:id="buttonBox" prefHeight="100.0" prefWidth="435.0" styleClass="hbox" stylesheets="@styles.css">
+                           <children>
+                              <Button fx:id="createCarrierBtn" mnemonicParsing="false" styleClass="save" stylesheets="@styles.css" text="Create" />
+                              <Button fx:id="cancelBtn" mnemonicParsing="false" styleClass="cancel" stylesheets="@styles.css" text="Clear" />
+                              <Button fx:id="saveButton" mnemonicParsing="false" styleClass="save" stylesheets="@styles.css" text="Save" />
+                              <Button fx:id="deleteCarrierBtn" mnemonicParsing="false" styleClass="cancel" stylesheets="@styles.css" text="Delete" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</fx:root>

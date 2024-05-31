@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<fx:root prefHeight="580.0" prefWidth="752.0" stylesheets="@styles.css" type="TableView" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <columns>
+      <TableColumn fx:id="transportServiceIdCol" prefWidth="300.0" text="Transport Service ID" />
+      <TableColumn fx:id="transportNameCol" minWidth="8.0" prefWidth="180.0" text="Name" />
+      <TableColumn fx:id="activeForDeliveryCol" prefWidth="320.0" text="Active For Delivery" />
+   </columns>
+   <columnResizePolicy>
+      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+   </columnResizePolicy>
+</fx:root>

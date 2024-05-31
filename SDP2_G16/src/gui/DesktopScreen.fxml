@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="866.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane fx:id="mainScreen" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="539.0" scaleShape="false" snapToPixel="false" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="80.0" right="80.0" />
+         </BorderPane.margin></AnchorPane>
+   </center>
+   <left>
+      <VBox fx:id="navbar" minWidth="-Infinity" prefHeight="348.0" prefWidth="200.0" styleClass="navbar" stylesheets="@styles.css" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="866.0" styleClass="header" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="71.0" prefWidth="200.0" styleClass="logo" stylesheets="@styles.css">
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="144.0" layoutX="28.0" layoutY="22.0" styleClass="logo" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="22.0">
+                     <image>
+                        <Image url="@../images/Logo_delaware_FullColor_whitetext_digital.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="headerTitle" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" styleClass="headerTitle" stylesheets="@styles.css" text="MSI" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="200.0" styleClass="username" stylesheets="@styles.css" />
+            <Button fx:id="logOutButton" mnemonicParsing="false" styleClass="logoutButton" stylesheets="@styles.css" text="Log out">
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </top>
+</fx:root>
