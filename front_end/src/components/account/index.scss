@@ -1,0 +1,107 @@
+@import "../../styles/variables.scss";
+
+.account-page {
+    margin-bottom: $margin-s;
+  &__form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 961px) {
+      grid-template-columns: 1fr;
+    }
+    &__group {
+      width: 330px;
+      height: 52px;
+
+      margin: auto;
+      padding: 0 $padding-xs;
+
+      margin-top: $margin-xs;
+      border: 1px solid $form-border-color;
+
+      border-radius: 11px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media screen and (max-width: 400px) {
+        width: 290px;
+      }
+
+      &__error {
+        font-size: $font-size-xxs;
+      }
+
+      &__line {
+        width: 0.5px;
+        height: 28px;
+
+        background-color: $form-line-color;
+
+        margin-left: $margin-xxs;
+      }
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 15px;
+        height: 15px;
+      }
+
+      &__input {
+        width: 250px;
+
+        margin: 0 $margin-xs;
+
+        position: relative;
+      }
+    }
+        &__submit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__button {
+            background-color: $primary-color-light;
+            color: black;
+    
+            border: none;
+    
+            width: 330px;
+            height: 45px;
+    
+            border-radius: 11px;
+    
+            font-size: $font-size-xs;
+    
+            margin-top: $margin-xs;
+    
+            cursor: pointer;
+    
+            transition: background-color 300ms linear, color 300ms linear,
+              opacity 300ms linear;
+    
+            @media screen and (max-width: 400px) {
+              width: 290px;
+            }
+    
+            span {
+              opacity: 0.5;
+            }
+    
+            &:hover {
+              background-color: $button-primary-bg-color;
+    
+              span {
+                color: $button-primary-color;
+                opacity: 1;
+              }
+            }
+          }
+        }
+  }
+}

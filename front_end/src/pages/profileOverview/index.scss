@@ -1,0 +1,335 @@
+@import "../../styles/variables.scss";
+.profile-overview {
+  padding: 20px;
+  min-height: calc(100vh - $header-height - $footer-height);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__switch {
+    width: 330px;
+    height: max-content;
+
+    text-align: center;
+
+    display: flex;
+
+    padding: $padding-xxxs;
+
+    background-color: $primary-color-light;
+
+    border-radius: 0.75rem;
+
+    font-size: $font-size-xs;
+
+    transition: all 300ms linear;
+
+    @media screen and (max-width: 378px) {
+      width: 290px;
+    }
+
+    &__button {
+      cursor: pointer;
+      width: 50%;
+
+      border: none;
+      outline: none;
+
+      background: transparent;
+
+      margin: 0 $margin-xs;
+      padding: $padding-xxxs $padding-l;
+
+      span {
+        color: black;
+        opacity: 0.5;
+      }
+      &__active {
+        cursor: pointer;
+        width: 50%;
+
+        border: none;
+        outline: none;
+
+        background-color: white;
+
+        padding: auto;
+
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.profile-page {
+  padding: $padding-l;
+  min-height: calc(100vh - $header-height - $footer-height);
+
+  font-family: $font-family-primary;
+
+  user-select: none;
+
+  &__line {
+    width: 0.5px;
+    height: 28px;
+
+    background-color: $form-line-color;
+
+    margin: 0 $margin-xxs;
+  }
+  &__header {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-gap: 2rem;
+
+    @media screen and (max-width: 555px) {
+      grid-gap: 0;
+    }
+    @media screen and (max-width: 448px) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center !important;
+    }
+
+    border-radius: 0.75rem;
+
+    box-shadow: 0px 2px 7px $product-shadow;
+
+    margin-bottom: $margin-m;
+
+    &__image {
+      width: 150px;
+      height: 150px;
+
+      margin: $margin-xs $margin-m;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+
+        box-shadow: 0px 2px 7px $product-shadow;
+      }
+
+      @media screen and (max-width: 555px) {
+        width: 100px;
+        height: 100px;
+      }
+      @media screen and (max-width: 448px) {
+        justify-self: center;
+      }
+    }
+
+    &__content {
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 0.5rem;
+      align-items: end;
+
+      @media screen and (max-width: 448px) {
+        justify-items: center;
+      }
+
+      @media screen and (max-width: 555px) {
+        font-size: $font-size-xs;
+        grid-gap: 0;
+      }
+
+      @media screen and (max-width: 750px) {
+        grid-template-rows: repeat(2, auto);
+      }
+    }
+    &__name {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+
+      @media screen and (max-width: 555px) {
+        font-size: $font-size-m;
+      }
+
+      @media screen and (max-width: 750px) {
+        margin-top: $margin-xs;
+      }
+
+      span {
+        font-size: $font-size-s;
+        font-weight: $font-weight-regular;
+        margin-left: $margin-xxs;
+        opacity: 0.75;
+
+        @media screen and (max-width: 555px) {
+          font-size: $font-size-xs;
+        }
+      }
+    }
+    &__information {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+
+      padding: $padding-xxs $padding-s $padding-xxs 0;
+
+      opacity: 0.5;
+
+      @media screen and (max-width: 448px) {
+        justify-content: center;
+        padding: $padding-xxxs;
+      }
+      &__item {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        margin: $margin-xxs;
+
+        @media screen and (max-width: 555px) {
+          margin: $margin-xxxs;
+        }
+
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    @media screen and (max-width: 648px) {
+      grid-template-columns: 1fr;
+    }
+
+    &__list {
+      height: max-content;
+      box-shadow: 0 2px 7px $product-shadow;
+
+      align-self: start;
+
+      border-radius: 0.75rem;
+
+      padding: $padding-xxs;
+
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: 648px) {
+        flex-flow: row;
+      }
+
+      &__item {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+
+        text-align: center;
+
+        padding: $padding-xs $padding-s;
+        margin: $margin-xxxs $margin-xxxs;
+
+        width: 136px;
+
+        border-radius: 0.5rem;
+
+        @media screen and (max-width: 648px) {
+          width: 50px;
+          height: 50px;
+          padding: $padding-xxs $padding-xs;
+          margin: $margin-xxxs;
+        }
+
+        @media screen and (max-width: 400px) {
+          width: 50px;
+          height: 50px;
+          padding: $padding-xxxs $padding-xxs;
+          margin:0;
+        }
+
+        &__text {
+          @media screen and (max-width: 648px) {
+            display: none;
+          }
+        }
+
+        &__icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @media screen and (min-width: 648px) {
+            display: none;
+          }
+        }
+
+        span {
+          margin-left: $margin-xxs;
+        }
+
+        transition: background-color 300ms linear;
+        &:hover {
+          background-color: $primary-color-light;
+        }
+
+        &__active {
+          background-color: $primary-color-light;
+
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          align-items: center;
+
+          cursor: pointer;
+
+          text-align: center;
+
+          padding: $padding-xs $padding-s;
+          margin: $margin-xxxs $margin-xxxs;
+
+          width: 136px;
+
+          border-radius: 0.5rem;
+
+          @media screen and (max-width: 648px) {
+            width: 50px;
+            height: 50px;
+            padding: $padding-xxs $padding-xs;
+            margin: $margin-xxxs;
+          }
+
+          @media screen and (max-width: 400px) {
+            width: 45px;
+            height: 45px;
+            padding: $padding-xxxs;
+            margin:0;
+          }
+        }
+      }
+    }
+    &__overview {
+      height: max-content;
+      box-shadow: 0 2px 7px $product-shadow;
+
+      border-radius: 0.75rem;
+
+      padding: $padding-xxs;
+      margin-left: $margin-m;
+
+      @media screen and (max-width: 648px) {
+        margin-left: 0;
+        margin-top: $margin-xs;
+      }
+    }
+  }
+}

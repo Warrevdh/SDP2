@@ -1,0 +1,172 @@
+@import "../../styles/variables";
+.track-trace {
+  &__data{
+    position:relative;
+
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    &__button{
+      cursor:pointer;
+
+      transition: color 300ms linear;
+
+      align-items: center;
+      position:absolute;
+      top: 50px;
+      left: 50px;
+
+      &:hover{
+        color: $primary-color;
+      }
+    }
+    span{
+      margin-left: $margin-xxs;
+    }
+
+    &__location{
+      align-items: center;
+    }
+  }
+  &__container {
+    &__form {
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+
+      &__group {
+        width: 330px;
+        height: 52px;
+
+        margin: auto;
+        padding: 0 $padding-xs;
+
+        margin-top: $margin-xs;
+        border: 1px solid $form-border-color;
+
+        border-radius: 11px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (max-width: 378px) {
+          width: 290px;
+        }
+
+        &__error {
+          font-size: $font-size-xxs;
+        }
+
+        &__line {
+          width: 0.5px;
+          height: 28px;
+
+          background-color: $form-line-color;
+
+          margin-left: $margin-xxs;
+        }
+
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: 15px;
+          height: 15px;
+        }
+
+        &__input {
+          width: 250px;
+
+          margin: 0 $margin-xs;
+
+          position: relative;
+
+          label {
+            position: absolute;
+            text-align: left;
+
+            pointer-events: none;
+
+            transition: 0.5s;
+
+            font-size: 0.5rem;
+            font-size: 0.8rem;
+
+            top: 2px;
+            left: 0;
+          }
+        }
+      }
+      &__error{
+        color: $primary-color-mid;
+        font-size: $font-size-xxs;
+        margin-top: $margin-xxs;
+        text-align: center;
+      }
+      &__submit {
+        &__button {
+          background-color: $primary-color;
+          color: white;
+
+          border: none;
+
+          width: 330px;
+          height: 45px;
+
+          border-radius: 11px;
+
+          font-size: $font-size-xs;
+
+          margin-top: $margin-xs;
+
+          cursor: pointer;
+
+          transition: background-color 300ms linear;
+
+          @media screen and (max-width: 378px) {
+              width: 290px;
+          }
+
+          &:hover {
+            background-color: $primary-color-mid;
+          }
+        }
+      }
+    }
+  }
+}
+
+.eye {
+  cursor: pointer;
+  margin-left: $margin-xxs;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  &:focus ~ label{
+    font-size: 0.5rem;
+    top: -11px;
+  }
+  &:valid ~ label {
+      font-size: 0.5rem;
+      top: -11px;
+    }
+}
+
+.invalid {
+  border: 1px solid $primary-color-mid;
+  input{
+    margin-top:$margin-xxxs !important
+  }
+  label{
+    color: $primary-color-mid;
+    font-size: $font-size-xxxs !important;
+    margin-bottom: $margin-xs !important;
+  }
+}

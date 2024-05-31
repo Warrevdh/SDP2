@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+
+.order {
+  box-shadow: 0 2px 7px $product-shadow;
+  border-radius: 0.75rem;
+  padding: $padding-s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-transform: uppercase;
+
+  &__header {
+    h2 {
+      transition: color 0.3s ease-in-out;
+      font-size: $font-size-l;
+      cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+    margin-top: $margin-s;
+    &__item {
+      &__title {
+        font-size: $font-size-s;
+      }
+      &__text {
+        font-size: $font-size-xxs;
+        display: flex;
+        align-items: center;
+        &__status {
+          font-size: $font-size-xxs;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            margin-right: $margin-xxs;
+            background-color: green;
+          }
+        }
+        &__trace {
+          font-size: $font-size-xxs;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          cursor: pointer;
+
+          svg {
+            margin-left: $margin-xxs;
+          }
+        }
+      }
+    }
+  }
+}

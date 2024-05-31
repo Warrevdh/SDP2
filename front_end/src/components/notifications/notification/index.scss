@@ -1,0 +1,104 @@
+@import "../../../styles/variables";
+
+.backButton {
+  margin-left: $margin-xl;
+  border-style: none;
+  border-radius: 12px;
+  padding: $padding-xxs $padding-xs;
+  background-color: rgb(76, 75, 75);
+  color: $button-primary-color;
+  transition-duration: 0.5s;
+
+  @media screen and (max-width: 768px) {
+    margin-left: $margin-xs;
+  }
+}
+.backButton:hover {
+  background-color: gray;
+}
+
+.notification {
+  @media screen and (min-width: 768px){
+    padding-left: $padding-m;
+    padding-right: $padding-m;
+  }
+  .topNotification {
+    display : flex;
+    flex-flow: nowrap row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .notificationSeen {
+    margin: $margin-xs;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 25px;
+    padding: $padding-xs;
+
+    @media screen and (min-width: 768px) {
+      padding: $padding-s $padding-s $padding-xs;
+    }
+  }
+
+  .notificationUnseen {
+    margin: $margin-xs;
+    border-style: solid;
+    border-color: #f7530d;
+    border-radius: 25px;
+    padding: $padding-xs;
+    background-color: $primary-color-light;
+    
+    @media screen and (min-width: 768px) {
+      padding: $padding-s $padding-s $padding-xs;
+    }
+  }
+
+  .deleteNotificationButton {
+    color: #646464;
+    transition-duration: 0.3s;
+  }
+
+  .deleteNotificationButton:hover {
+    color: black;
+  }
+
+  .detailsContainer{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__date{
+    color: #646464;
+    font-weight: $font-weight-bold;
+    padding: $padding-xxxs 0 0;
+  }
+
+  &__contents{
+    padding: $padding-xs 0 0;
+
+    @media screen and (max-width: 768px) {
+      padding: $padding-xxs 0 $padding-xxs;
+    }
+
+    @media screen and (max-width: 300px) {
+      padding: $padding-xxs 0 $padding-xs;
+    }
+  }
+
+  &__detailsButton {
+    background-color: rgb(76, 75, 75);
+    border: none;
+    border-radius: 8px;
+    font-size: large;
+    padding: $padding-xxs $padding-xs;
+    color: white;
+    margin-right: 0;
+    margin-left: auto;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
+  }
+}

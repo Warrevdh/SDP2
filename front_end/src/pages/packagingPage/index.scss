@@ -1,0 +1,132 @@
+@import "../../styles/variables.scss";
+
+.packagingPage {
+  min-height: calc(100vh - $header-height - $footer-height);
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  &__button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: $margin-m;
+    align-items: center;
+    border:none;
+    background-color: transparent;
+
+    transform: translate(3rem, 3rem);
+
+    cursor: pointer;
+
+    svg{
+      margin-right: $margin-xxs;
+    }
+
+  }
+
+  &__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    &__error {
+            color: $primary-color-mid;
+            font-size: $font-size-xxs;
+            margin-top: $margin-xxs;
+            text-align: center;
+            margin-bottom: $margin-s;
+        }
+
+    &__title{
+        margin-bottom: $margin-m;
+
+        h2{
+            font-size: $font-size-xl;
+            text-transform: uppercase;
+
+            letter-spacing: $font-spacing-xxl;
+            font-weight: $font-weight-light;
+        }
+    }
+        &__type {
+            margin-bottom: $margin-m;
+            margin-top: $margin-xxxs;
+            opacity: 0.5;
+            font-size: $font-size-xs;
+        }
+
+    select {
+      width: 290px;
+      height: 52px;
+
+      border-radius: 0.75rem;
+
+      outline: none;
+
+      padding: 0 $padding-xs;
+      margin-top: $margin-xs ;
+    }
+
+    &__dimensions {
+      grid-template-columns: auto repeat(2, 1fr);
+      align-items: center;
+      justify-content: center;
+      
+
+      width: 290px;
+      padding: $padding-xxxs $padding-xs;
+      &__value {
+        flex-flow: column nowrap;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      &__title {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+
+        align-self:start;
+      }
+      &__symbol {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+    &__price{
+        background-color: $primary-color-light;
+        margin-top: $margin-m;
+        border-radius: 0.75rem;
+        padding: $padding-xxs $padding-s;
+    }
+    svg {
+      margin: $margin-xxxs $margin-xs $margin-xxxs 0;
+    }
+
+    button{
+        width: 290px;
+        height: 52px;
+    
+        border-radius: 0.75rem;
+    
+        outline: none;
+    
+        padding: 0 $padding-xs;
+        margin-top: $margin-xs;
+        border:none;
+        background-color: $primary-color;
+        color: white;
+
+        cursor: pointer;
+        transition: background-color 300ms linear;
+        &:hover {
+          background-color: $primary-color-mid;
+        }
+    }
+  }
+}

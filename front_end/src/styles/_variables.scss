@@ -1,0 +1,217 @@
+// Description: This file contains all the variables used in the project.
+
+// ====== Font Colors ======
+
+// Header colors
+$header-top-color:#ffffff;
+$header-bottom-color:#ffffff;
+
+// Footer colors
+$footer-top-color:#000000;
+$footer-bottom-color:#000000;
+
+// Body colors
+$body-color:#000000;
+$body-title-color: #000000;
+$body-subtitle-color: #a9a9a9;
+
+// Button colors
+$button-primary-color: #ffffff;
+$button-secondary-color: #ffffff;
+
+// Icon colors
+$icon-static-color: #008000;
+
+// Tag colors
+$tag-promo-color: #ffffff;
+$tag-new-color: #ffff00;
+
+// Cart colors
+$cart-success-color: #ffffff;
+$cart-error-color: #ffffff;
+
+// error colors
+$font-color-error: #721c24;
+
+// ====== Background Colors ======
+
+// Error colors
+$bg-error: #f8d7da;
+
+// Header colors
+$header-top-bg-color: #EC4842;
+$header-bottom-bg-color: #E0433E;
+
+// Footer colors
+$footer-top-bg-color: #F8FAFB;
+$footer-bottom-bg-color: #f0f2f3;
+
+// Body colors
+$body-bg-color: #fff;
+$sides-bg-color: #fff;
+
+// Button colors
+$button-primary-bg-color: #EC4842;
+$button-secondary-bg-color: #5e27cd;
+
+// Tag colors
+$tag-promo-bg-color: #0000ff;
+$tag-new-bg-color: #ff0000;
+
+// Cart colors
+$cart-side-bg-color: #F8FAFB;
+$cart-info-bg-color: #F8FAFB;
+$cart-success-bg-color: #2FCC71;
+$cart-error-bg-color: #ff0000;
+$cart-add-color: #288d52;
+
+// notification colors
+$notification-bg-color: #62c562;
+
+// track order colors
+$track-order-bg-color: #f0f0f0;
+$track-order-bg-color-active: #f2b54b;
+$track-order-bg-color-completed: #53af53;
+
+// image colors
+$image-bg-color: #f0f0f0;
+
+// product colors
+$product-bg-color: #fafafa;
+
+// filter colors
+$filter-bg-color: rgba(236, 72, 66, 0.1);
+$filter-bg-checkbox-color: #dddddd;
+
+// search colors
+$search-bg-color: rgba(236, 72, 66, 0.1);
+$search-bg-color-focus: rgba(236, 72, 66, 0.3);
+
+$primary-color-light: rgba(236, 72, 66, 0.1);
+$primary-color-mid: rgba(236, 72, 66, 0.5);
+$primary-color: rgba(236, 72, 66, 1);
+
+// ====== Form colors ======
+$form-border-color: #d3d3d3;
+$form-line-color: #d2d2d2;
+
+
+// ====== Shadows ======
+
+// product
+$product-shadow: #dfdfdf;
+
+
+// footer link colors
+$footer-link-list-color: #c42828;
+
+// logo colors
+$logo-color: #ef463c;
+
+// ====== Border Colors ======
+
+// Product colors
+$product-border-color: #000000;
+
+// Cart colors
+$cart-border-color: #EDF1F3;
+
+// ===== Radio Buttons colors =====
+$icon-radio-active-color: #ff0000;
+$icon-radio-normal-color: #000000;
+
+// ====== Carousel colors ======
+$icon-carousel-active-color: #ff0000;
+$icon-carousel-normal-color: #ffffff;
+
+// ====== link colors ======
+$icon-link-color: #0000ff;
+
+// ====== pdf colors ======
+$icon-pdf-color: #ff0000;
+
+
+// ====== Enabled ======
+$sides-enabled: false;
+
+// ====== Dimensions ======
+$header-height: 115px;
+$footer-height: 50px;
+
+
+// ====== Font Family ======
+
+@font-face {
+    font-family: 'Avenir Next Regular';
+    src: url("../assets/Fonts/AvenirNext-Regular.ttf");
+}
+
+$font-family-primary: 'Avenir Next Regular', sans-serif;
+
+// ====== Font Sizes ======
+
+$font-size-xxxs: 11px;
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 28px;
+$font-size-xxxl: 32px;
+
+// ====== Font Weights ======
+$font-weight-light: 100;
+$font-weight-regular: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+
+// ====== Font Line Heights ======
+
+$font-line-height-xxs: 16px;
+$font-line-height-xs: 18px;
+$font-line-height-s: 20px;
+$font-line-height-m: 22px;
+$font-line-height-l: 24px;
+$font-line-height-xl: 28px;
+$font-line-height-xxl: 32px;
+$font-line-height-xxxl: 36px;
+
+// ====== Font Spacing ======
+
+$font-spacing-xxs: 0.1px;
+$font-spacing-xs: 0.2px;
+$font-spacing-s: 0.3px;
+$font-spacing-m: 0.4px;
+$font-spacing-l: 0.5px;
+$font-spacing-xl: 0.6px;
+$font-spacing-xxl: 0.7px;
+$font-spacing-xxxl: 0.8px;
+
+// ====== Margin ======
+$margin-xxxs: 0.25rem;
+$margin-xxs: 0.5rem;
+$margin-xs: 1rem;
+$margin-s: 1.5rem;
+$margin-m: 2rem;
+$margin-l: 2.5rem;
+$margin-xl: 3rem;
+$margin-xxl: 3.5rem;
+$margin-xxxl: 4rem;
+
+// ====== Padding ======
+$padding-xxxs: 0.25rem;
+$padding-xxs: 0.5rem;
+$padding-xs: 1rem;
+$padding-s: 1.5rem;
+$padding-m: 2rem;
+$padding-l: 2.5rem;
+$padding-xl: 3rem;
+$padding-xxl: 3.5rem;
+$padding-xxxl: 4rem;
+
+
+
+
+
+

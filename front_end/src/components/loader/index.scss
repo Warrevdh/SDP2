@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.loader {
+  &__container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin-top: $margin-m;
+      border-radius: 50%;
+      border: 6px solid rgba(0, 0, 0, 0.1);
+      border-top-color: #ffffff;
+      animation: spin 1s infinite linear;
+    }
+  }
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,31 @@
+@import './_variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html{
+  scroll-behavior: smooth;
+  font-family: $font-family-primary;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.grid{
+    display: grid;
+}
+.flex{
+    display: flex;
+}
+p{
+    margin-bottom: 0;
+}
+
+

@@ -1,0 +1,274 @@
+@import "../../../styles/variables";
+
+.product-filter {
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+  align-items: top;
+
+  @media screen and (min-width: 575px) {
+    padding: $padding-m;
+  }
+  
+
+  @media screen and (max-width: 575px) {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+    grid-gap:0;
+  }
+
+  .navbar-collapse {
+    @media screen and (min-width: 575px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media screen and (min-width: 575px) {
+      box-shadow:  0 2px 7px $product-shadow;
+      border-radius: 0.75rem;
+      padding: $padding-s $padding-s;
+    }
+  }
+}
+
+.navbar-toggler {
+  @media screen and (min-width: 575px) {
+    display: none;
+  }
+}
+aside {
+  margin: 0 0;
+  width: 100%;
+  display: inline-block;
+
+  @media screen and (max-width: 800px){
+    max-width: 100%;
+    display: block;
+    font-size: small;
+  }
+
+  @media screen and (max-width: 575px) {
+    font-size: small;
+    padding: 0 $padding-s;
+  }
+}
+
+aside{
+  @media screen and (max-width: 575px) {
+    
+    display: flex;
+      justify-content: center;
+  }
+  
+}
+
+.navbar-expand-sm {
+  @media screen and (max-width: 575px) {
+    
+    border-radius: 0.75rem;
+    padding: $padding-xxs $padding-s;
+
+    box-shadow: 0 2px 7px $product-shadow;
+  }
+}
+.filter {
+  background-color: lightgray;
+  font-family: $font-family-primary;
+  padding: $padding-m;
+  padding-top: $padding-xxl;
+  margin-right: 10px;
+
+  display: flex;
+
+  &__sort {
+    &__label {
+      opacity: 0.75;
+    }
+    &__dropdown {
+      margin: $margin-xxs 0 $margin-xxs $margin-xxs;
+      border-radius: 8px;
+      padding: $padding-xxs $padding-xs $padding-xxs $padding-xxs;
+      width: max-content;
+      cursor: pointer;
+      transition: background-color 300ms linear;
+      &:hover {
+        background-color: $filter-bg-color;
+      }
+
+      @media screen and (max-width: 800px) {
+        margin-left: $margin-xs;
+        padding: $padding-xxxs $padding-xxxs;
+      }
+    }
+  }
+  
+  &__category {
+    &__label {
+      margin-top: $margin-xxs;
+      opacity: 0.75;
+    }
+    &__name {
+      border-radius: 8px;
+      padding: $padding-xxxs $padding-xs;
+      width: max-content;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 300ms linear;
+      label{
+        cursor: pointer;
+      }
+      &:hover {
+        background-color: $filter-bg-color;
+      }
+    }
+  }
+
+  &__container {
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    &__company {
+      &__label {
+        opacity: 0.75;
+      }
+      &__option {
+        cursor: pointer;
+        display:flex;
+        align-items: center;
+
+        margin: $margin-xxs 0;
+        border-radius: 8px;
+        padding: $padding-xxs $padding-xs;
+
+        width: max-content;
+
+        transition: background-color 300ms linear;
+
+        &:hover {
+          background-color: $filter-bg-color;
+        }
+
+        input[type="checkbox"] {
+          margin-right: $margin-xxs;
+          cursor: pointer;
+
+          display: flex;
+          appearance: none;
+          background: $filter-bg-checkbox-color;
+          height: 1.25rem;
+          width: 1.25rem;
+          border-radius: 20%;
+          box-shadow: 0 2px 2px 1px fade(black, 20) inset,
+            0 1px 1px 1px fade(white, 20);
+
+          &::after {
+            content: "✔";
+            font-size: $font-size-xs;
+            margin: auto;
+          }
+
+          &:not(:checked)::after {
+            color: transparent;
+            text-shadow: 0 0 0 transparent;
+            transition: color 200ms ease-out, text-shadow 150ms ease-out 25ms;
+          }
+          &:checked{
+            background-color: $button-primary-bg-color;
+          }
+
+          &:checked::after {
+            color: #eee;
+            text-shadow: 2px 3px 2px fade(black, 20);
+            transition: color 200ms ease-in, text-shadow 150ms ease-in 25ms;
+          }
+        }
+        label {
+          font-weight: $font-weight-medium;
+          cursor: pointer;
+        }
+      }
+    }
+    &__price{
+        &__label {
+            opacity: 0.75;
+        }
+        h4{
+            padding: $padding-xxs $padding-xs;
+            font-size: $font-size-s;
+            width: 230px;
+            span{
+                opacity: 0.75;
+                font-size: $font-size-xs;
+                letter-spacing: $font-spacing-xs;
+                font-weight: $font-weight-regular;
+            }
+        }
+        p{
+            padding: 0 $padding-xs;
+            font-size: $font-size-xs;
+        }
+        input[type="range"] {
+          appearance: none;
+          width: 100%;
+          height: 5px;
+          border-radius: 5px;
+          background: $filter-bg-color;
+          outline: none;
+          opacity: 0.7;
+          transition: opacity .2s;
+          margin: $margin-xxs 0;
+          touch-action: none;
+          &::-webkit-slider-thumb{
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: $button-primary-bg-color;
+            cursor: pointer;
+            transition: background-color .2s;
+          }
+        }
+      }
+    }
+  }
+  
+
+.results{
+    padding: 0;
+    font-family: $font-family-primary;
+
+    .container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 10px;
+      padding: 10px;
+
+      .product {
+        justify-self: center;
+      }
+    }
+    
+    @media (max-width: 1100px) {
+      .container {  grid-template-columns: 1fr 1fr;}
+    }
+    @media screen and (min-width: 1100px) and (max-width: 1200px) {
+      .container {  grid-template-columns: 1fr 1fr 1fr;}
+    }
+    
+    @media (max-width: 800px) {
+      .container {  grid-template-columns: 1fr;}
+    }
+}
+
+.amount-results {
+  display: flex;
+  align-items: center;
+  span {
+      font-weight: $font-weight-medium;
+      background: $filter-bg-color;
+      border-radius: 20%;
+      padding: $padding-xxs $padding-xs;
+      margin-left: $margin-xxs;
+    }
+}
+

@@ -1,0 +1,91 @@
+[{
+  "productId":"1",
+  "name":"Product 1",
+  "pictureImg":null,
+  "amountInStock":"5",
+  "deliveryTime":"4d",
+  "fromCompany":"Company test 1",
+  "categoryId":"cat1",
+  "productListerDescription":"Product 1 ListerDesc",
+  "productLongDescription":"Long Desc 1",
+  "productShortDescription":"Short Desc 1",
+  "Category": {
+    "categoryId":"cat1",
+    "categoryName":"Category test 1"
+  },
+  "prices":
+    [{
+      "priceId":"price1IDEU",
+      "currencyId":"EU",
+      "price":49.99,
+      "validFrom":"1970-01-01T00:00:00.000Z",
+      "productId":"1"},
+    {
+      "priceId":"price1IDUSD",
+      "currencyId":"USD",
+      "price":59.99,
+      "validFrom":"1970-01-01T00:00:00.000Z",
+      "productId":"1"
+    }]
+  },
+  {
+  "productId":"2",
+  "name":"Product 1",
+  "pictureImg":null,
+  "amountInStock":"10",
+  "deliveryTime":"5d",
+  "fromCompany":"Company test 2",
+  "categoryId":"cat1",
+  "productListerDescription":"Product 2 ListerDesc",
+  "productLongDescription":"Long Desc 2",
+  "productShortDescription":"Short Desc 2",
+  "Category": {
+    "categoryId":"cat1",
+    "categoryName":"Category test 1"
+  },
+  "prices":
+    [{
+      "priceId":"price2IDEU",
+      "currencyId":"EU",
+      "price":69.99,
+      "validFrom":"1970-01-01T00:00:00.000Z",
+      "productId":"2"},
+    {
+      "priceId":"price2IDUSD",
+      "currencyId":"USD",
+      "price":79.99,
+      "validFrom":"1970-01-01T00:00:00.000Z",
+      "productId":"2"
+    }]
+  },
+  {
+  "productId":"3",
+  "name":"Product 2",
+  "pictureImg":null,
+  "amountInStock":"15",
+  "deliveryTime":"6d",
+  "fromCompany":"Company test 2",
+  "categoryId":"cat2",
+  "productListerDescription":"Product 3 ListerDesc",
+  "productLongDescription":"Long Desc 3",
+  "productShortDescription":"Short Desc 3",
+  "Category": {
+    "categoryId":"cat2",
+    "categoryName":"Category test 2"
+  },
+  "prices":
+    [{
+      "priceId":"price3IDEU",
+      "currencyId":"EU",
+      "price":89.99,
+      "validFrom":"1970-01-01T00:00:00.000Z",
+      "productId":"3"},
+    {
+      "priceId":"price3IDUSD",
+      "currencyId":"USD",
+      "price":99.99,
+      "validFrom":"1970-01-01T00:00:00.000Z",
+      "productId":"3"
+    }]
+  }
+]

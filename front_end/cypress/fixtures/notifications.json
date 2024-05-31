@@ -1,0 +1,29 @@
+[
+  {
+    "notificationId": "id1",
+    "title": "Test notification 1",
+    "companyId": "companyID1",
+    "shortMessage": "Short description 1",
+    "longMessage": "Expanded description 1",
+    "createdAt": "2023-03-23T13:10:36.394Z",
+    "seen": true
+  },
+  {
+    "notificationId": "id2",
+    "title": "Test notification 2",
+    "companyId": "companyID1",
+    "shortMessage": "Short description 2",
+    "longMessage": "Expanded description 2",
+    "createdAt": "2023-03-22T13:10:36.394Z",
+    "seen": false
+  },
+  {
+    "notificationId": "id3",
+    "title": "Test notification 3",
+    "companyId": "companyID1",
+    "shortMessage": "Short description 3",
+    "longMessage": "Expanded description 3",
+    "createdAt": "2023-03-21T13:10:36.394Z",
+    "seen": false
+  }
+]

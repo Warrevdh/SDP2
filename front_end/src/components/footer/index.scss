@@ -1,0 +1,60 @@
+@import "../../styles/variables";
+
+.footer {
+  background-color: $footer-bottom-bg-color;
+
+  min-height: $footer-height;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+
+  font-size: $font-size-xs;
+
+  &__copy {
+    margin-right: $margin-m;
+
+    @media screen and (max-width: 768px) {
+        margin-top: $margin-s;
+        margin-left: $margin-xxs;
+    }
+    p{
+      margin-bottom: 0 !important;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-flow: row wrap;
+    
+    @media screen and (max-width: 768px) {
+        margin-left: $margin-s;
+        margin-bottom: $margin-s;
+    }
+    margin-bottom: 0 !important;
+
+
+    li {
+      margin-right: $margin-m;
+
+      &::before {
+        content: "\2022";
+        color: $footer-link-list-color;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -$margin-xs;
+      }
+    }
+
+    a {
+      color: $footer-bottom-color;
+      transition: color, text-decoration 300ms ease-in-out;
+
+      &:hover {
+        color: $footer-link-list-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}

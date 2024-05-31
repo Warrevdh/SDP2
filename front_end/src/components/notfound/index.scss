@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - $header-height - $footer-height);
+  h1 {
+    font-size: $font-size-xxxl;
+    color: #ec4842;
+  }
+  h2 {
+    font-size: $font-size-xl;
+    color: #777;
+  }
+  p {
+    font-size: $font-size-m;
+    margin: 2rem 0;
+    text-align: center;
+    max-width: 600px;
+  }
+  .btn {
+    font-size: $font-size-s;
+    color: black;
+    background-color: $primary-color-light;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    span {
+      opacity: 0.5;
+    }
+    &:hover {
+      span {
+        opacity: 1;
+      }
+      color: white;
+      background-color: $button-primary-bg-color;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@import "../../styles/variables";
+
+.navbar {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  background-color: $header-top-bg-color;
+
+  height: $header-height;
+
+  font-family: $font-family-primary;
+  color: $header-top-color;
+  padding: 0 $padding-l;
+
+  @media screen and (max-width: 426px) {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+
+  &__logo {
+    justify-self: start;
+
+    padding: $padding-s;
+
+    @media screen and (max-width: 426px) {
+      display: none;
+    }
+
+    a {
+      font-weight: $font-weight-regular;
+      line-height: $font-line-height-s;
+      font-size: $font-size-xxxl;
+
+      @media screen and (max-width: 786px) {
+        font-size: $font-size-xl;
+      }
+    }
+  }
+
+  &__links {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: $margin-xs;
+
+    @media screen and (max-width: 786px) {
+      margin: $margin-xxs;
+    }
+
+    @media screen and (max-width: 426px) {
+      margin: $margin-xs;
+    }
+
+    &:nth-child(3) {
+      margin-right: $margin-m;
+    }
+    &:nth-child(4) {
+      color:black !important;
+    }
+
+    &__text {
+      font-weight: $font-weight-medium;
+      font-size: $font-size-xs;
+      letter-spacing: $font-spacing-s;
+
+      text-transform: uppercase;
+
+      margin-top: $margin-xxxs;
+
+      @media screen and (max-width: 786px) {
+        display: none;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      margin-right: $margin-xs;
+
+      opacity: 0.5;
+      font-size: $font-size-xxl;
+
+      transition: opacity 300ms ease-in-out;
+
+      &__notification {
+        position: absolute;
+        top: -7.5px;
+        right: -7.5px;
+
+        width: 1rem;
+        height: 1rem;
+
+        border-radius: 50%;
+
+        background-color: $notification-bg-color;
+        color: $header-top-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: $font-size-xxs;
+        font-weight: $font-weight-bold;
+      }
+
+      @media screen and (max-width: 786px) {
+        font-size: $font-size-xl;
+
+        margin-right: $margin-xxs;
+      }
+    }
+
+    &:hover {
+      .navbar {
+        &__link {
+          &__icon {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: $header-top-color;
+  }
+}

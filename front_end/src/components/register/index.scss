@@ -1,0 +1,216 @@
+@import "../../styles/variables";
+
+.register {
+  &__container {
+    &__form {
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+
+      &__double {
+        width: 330px;
+        height: 52px;
+
+        display: flex;
+
+        margin-bottom: $margin-xs;
+      }
+
+      &__group {
+        width: 330px;
+        height: 52px;
+
+        margin: auto;
+        padding: 0 $padding-xs;
+
+        margin-top: $margin-xs;
+        border: 1px solid $form-border-color;
+
+        border-radius: 11px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (max-width: 378px) {
+          width: 290px;
+        }
+        &__country {
+          width: 330px;
+
+          margin: auto;
+
+          margin-top: $margin-xs;
+
+          button {
+            border-radius: 11px !important;
+            border: 1px solid $form-border-color !important;
+            height: 52px !important;
+          }
+          @media screen and (max-width: 378px) {
+            width: 290px;
+          }
+        }
+
+        &__error {
+          font-size: $font-size-xxs;
+        }
+
+        &__line {
+          width: 0.5px;
+          height: 28px;
+
+          background-color: $form-line-color;
+
+          margin-left: $margin-xxs;
+        }
+
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: 15px;
+          height: 15px;
+        }
+
+        &__input {
+          width: 250px;
+
+          margin: 0 $margin-xs;
+
+          position: relative;
+
+          label {
+            position: absolute;
+            text-align: left;
+
+            pointer-events: none;
+
+            transition: 0.5s;
+
+            font-size: 0.5rem;
+            font-size: 0.8rem;
+
+            top: 2px;
+            left: 0;
+          }
+        }
+      }
+
+      &__error {
+        color: $primary-color-mid;
+        font-size: $font-size-xxs;
+        margin-top: $margin-xxs;
+        text-align: center;
+      }
+
+      &__submit {
+        &__button {
+          background-color: $primary-color-light;
+          color: black;
+
+          border: none;
+
+          width: 330px;
+          height: 45px;
+
+          border-radius: 11px;
+
+          font-size: $font-size-xs;
+
+          margin-top: $margin-xs;
+
+          cursor: pointer;
+
+          transition: background-color 300ms linear, color 300ms linear,
+            opacity 300ms linear;
+
+          @media screen and (max-width: 378px) {
+            width: 290px;
+          }
+
+          span {
+            opacity: 0.5;
+          }
+
+          &:hover {
+            background-color: $button-primary-bg-color;
+
+            span {
+              color: $button-primary-color;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.eye {
+  cursor: pointer;
+  margin-left: $margin-xxs;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+
+  &:focus ~ label {
+    font-size: 0.5rem;
+    top: -11px;
+  }
+
+  &:valid ~ label {
+    font-size: 0.5rem;
+    top: -11px;
+  }
+}
+
+.address,
+.city {
+  width: 200px !important;
+  margin-right: 5px !important;
+}
+
+.nr {
+  width: 120px !important;
+  margin-left: 5px !important;
+  padding: 0 5px !important;
+
+  input {
+    width: 100% !important;
+
+    position: relative;
+
+    label {
+      position: absolute;
+      text-align: left;
+
+      pointer-events: none;
+
+      transition: 0.5s;
+
+      font-size: 0.5rem;
+      font-size: 0.8rem;
+
+      top: 2px;
+      left: 0;
+    }
+  }
+}
+
+.ReactFlagsSelect-module_filterBox__3m8EU {
+  input{
+    border-radius: 11px !important;
+    border: 1px solid $form-border-color !important;
+    height: 52px !important;
+  }
+}
+
+.ReactFlagsSelect-module_selectOptions__3LNBJ{
+  border-radius: 11px !important;
+  border: 1px solid $form-border-color !important;
+}

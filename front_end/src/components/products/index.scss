@@ -1,0 +1,52 @@
+@import "../../styles/variables";
+.products {
+  font-family: $font-family-primary;
+  min-height: calc(100vh - $header-height - $footer-height);
+
+  header {
+    font-size: $font-size-m;
+    font-weight: $font-weight-bold;
+    margin: $margin-m auto $margin-s auto;
+    text-align: center;
+  }
+
+  .search {
+    display: flex;
+    margin: $margin-l auto $margin-s auto;
+    padding: $padding-xs $padding-xs $padding-xs 0;
+    width: 60%;
+    // background-color: $search-bg-color;
+
+    border-radius: .6rem;
+
+    @media (max-width: 1100px) {
+      .search {  width: 90%;}
+    }
+
+    &__button {
+      cursor: pointer;
+      height: 30px;
+      width: 30px;
+      margin: auto $margin-xxs auto 0;
+      opacity:0.5;
+      transition: opacity 300ms linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &__input {
+      border: 2.5px solid $search-bg-color;
+      outline:none;
+      border-radius: .6rem;
+      padding: $padding-xxs;
+      width: 100%;
+      transition: border 300ms linear, background-color 300ms linear;
+      &:focus {
+        border: 2.5px solid $search-bg-color-focus;
+        background-color: $search-bg-color;
+      }
+    }
+  }
+}

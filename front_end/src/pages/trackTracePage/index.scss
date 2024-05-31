@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.track-trace-page{
+    min-height: calc(100vh - $header-height - $footer-height);
+
+    align-items: center;
+    justify-items: center;
+
+    @media screen and (max-width: 768px) {
+        padding-bottom: $padding-xxxl;
+    }
+}
